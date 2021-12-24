@@ -10,3 +10,4 @@
 | <br>Blunder</br> ![blunder](img/blunder.png) | 03-10-20  | Easy       | [Blunder Walkthrough](./blunder.md) |
 | <br>Tabby</br> ![buff](img/tabby.png)        | 13-10-20  | Easy       | [Tabby Walkthrough](./tabby.md)     |
 | <br>Cap</br> ![Cap](img/cap.png)             | 27-09-21  | Easy       | [Cap Walkthrough](./cap.md)         |
+| <br>Previse</br> ![Previse](img/previse.png)      | 24-12-21  | Easy       | [Previse Walkthrough](./previse.md) |
