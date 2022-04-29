@@ -11,3 +11,4 @@
 | <img width=80% src="img/previse.png">     | 24-12-21  | Easy       | [Previse Writeup](./writeups/previse.md) |
 | <img width=80% src="img/secret.png">      | 01-01-22  | Easy       | [Secret Writeup](./writeups/secret.md)   |
 | <img width=80% src="img/horizontall.png"> | 09-01-22  | Easy       | [Horizontall Writeup](./writeups/horizontall.md)   |
+| <img width=80% src="img/paper.png">       | 29-04-22  | Easy       | [Paper Writeup](./writeups/paper.md)     |
