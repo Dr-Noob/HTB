@@ -26,7 +26,7 @@ $ ffuf -w ~/wordlist/directory-list-2.3-big.txt:FUZZ -u http://10.10.11.164/FUZZ
 
 ```
 
-The console was protected by a pin so I did some research to see if there was anyway to crack it and found [this] (https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/werkzeug). I needed someway to get a LFI to hack the console.
+The console was protected by a pin so I did some research to see if there was anyway to crack it and found [this](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/werkzeug). I needed someway to get a LFI to hack the console.
 Eventually by reading the source code I found some protection against *../* but not against *..//* in utils.py
 
 ```python
